@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Metadata Project</title>
+    <!-- jQueryee-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Favicon-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='assets/img/favicon.png')}}"
+    />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css')}}"
+    />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="home">Home</a>
+
+        <button
+          class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <!--Navigation Menu-->
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="DisplayFiles">Display Files</a></li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#videoupload"
+                >Video Upload</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- <img class="masthead-avatar mb-5" src="assets/img/head_logo.JPG" alt="..." /> -->
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">
+          Video Upload
+        </h1>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">
+          <br /><br /><br />Input the desired video file into the system by: <br><br>
+        Clicking on "Choose File" button to access your file manager <br><br>
+        Find the desired mp3 or mp4 file <br><br> Click "submit"
+        and now the video should be uploaded into the system <br><br> Click on "Home" in the navigation bar above to go back
+        </p>
+      </div>
+    </header>
+
+    <!-- Video Upload Section-->
+    <section class="page-section portfolio" id="videoupload">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-secondary mb-0">
+          Video Upload
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+          <!-- Portfolio Item 1-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div>
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/video.png')}}" alt="..." />
+              <p class="mb-4" align ="center">Upload the desired video here.</p>
+              <!-- Enter the file to be uploaded and processed-->
+              <form
+                action="/AWS-Video-File-upload"
+                method="post"
+                enctype="multipart/form-data">
+                <input type="file" name="file" value="file" />
+                <input
+                  type="submit"
+                  name="upload"
+                  value="Upload"
+                  class="btn btn-success"
+                />
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Location-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Project Repository</h4>
+            <br />
+
+            <br />
+            <br />
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://github.com/ED2-MetaTagging/NETC-Project.git"
+              ><i class="fab fa-fw fa-github"></i
+            ></a>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Team</h4>
+            <p class="lead mb-0">
+              Kyle Mendoza (Creator) <br />
+              Giovanni Gonzalez (Creator) <br />
+              Jose Silverio (Creator) <br />
+              Ryan Smith (Creator) <br />
+              Eli Cohen (Creator) <br />
+              Franklin Ludgood (Sponsor) <br />
+              Randall Denny (Sponsor) <br />
+              Hari Kalva (Advisor) <br />
+            </p>
+          </div>
+
+          <!-- Footer Social Icons-->
+
+          <!-- Footer About Text-->
+          <!--<div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About MetaData Content Tagging</h4>
+                        <p class="lead mb-0">
+                            MetaData Content Tagging is an open source tool to process documents and videos and produce metadata for easier content searches.
+                            It was developed at Florida Atlantic University beginning in the Fall semester of 2021.
+			    <br />
+			    <a href="https://www.fau.edu">FAU</a>
+                            
+                        </p>
+                    </div>-->
+        </div>
+      </div>
+    </footer>
+
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='scripts/scripts.js')}}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>
